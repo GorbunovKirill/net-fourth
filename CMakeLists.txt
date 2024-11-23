@@ -11,6 +11,7 @@ qt_add_executable(ProgressBarApp
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    resources.qrc
 )
 
 target_link_libraries(ProgressBarApp
@@ -33,3 +34,6 @@ qt_generate_deploy_app_script(
     NO_UNSUPPORTED_PLATFORM_ERROR
 )
 install(SCRIPT ${deploy_script})
+
+qt_add_resources(RESOURCES resources.qrc)
+target_sources(ProgressBarApp PRIVATE ${RESOURCES})
